@@ -1,0 +1,16 @@
+<section class="product-grid">
+    <div class="product-card" *ngFor="let item of items">
+        <img [src]="item.product?.imageUrl" alt="{{item.product?.name}}" class="product-image" />
+        <div class="product-info">
+            <h3>{{item.product?.name}}</h3>
+            <p class="price">₹ {{item.product?.price}}</p>
+            <p class="description">{{item.product?.description}}</p>
+            <p>Quantity: {{item.quantity}}</p>
+            <button class="btn-cart-card btn-danger btn" (click)="remove(item)">Remove</button>
+        </div>
+    </div>
+</section>
+
+<div *ngIf="items.length === 0">
+    <p>Your cart is empty.</p>
+</div>

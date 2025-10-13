@@ -1,0 +1,24 @@
+<div class="control-strip">
+    <div class="left-controls">
+        <button
+                class="sort-btn"
+                [class.active]="activeSort === 'price'"
+                (click)="setSort('price')">
+            Sort by Price
+        </button>
+        <button
+                class="sort-btn"
+                [class.active]="activeSort === 'alphabet'"
+                (click)="setSort('alphabet')">
+            Sort by Alphabet
+        </button>
+    </div>
+
+    <div class="right-controls">
+        <div class="search-box">
+            <input #searchInput type="text" placeholder="Search products..." />
+            <button (click)="triggerSearch(searchInput)">Search</button>
+        </div>
+        <button class="btn-cart" (click)="goToCart()">Cart</button>
+    </div>
+</div>

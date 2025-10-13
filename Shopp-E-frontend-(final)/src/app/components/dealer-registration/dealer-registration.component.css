@@ -1,0 +1,142 @@
+/* ---------- Container and Card ---------- */
+.container {
+  font-family: "Poppins", sans-serif;
+  background-color: #111;
+  color: #f1f1f1;
+  padding: 40px 15px;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #ffcc00 !important;
+  color: #111 !important;
+  text-align: center;
+  padding: 15px;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Section Titles ---------- */
+h4[style] {
+  color: #ffcc00 !important;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+/* ---------- Form Fields ---------- */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  color: #ffcc00;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input.form-control {
+  background-color: #222;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input.form-control:focus {
+  border-color: #ffcc00;
+  outline: none;
+  box-shadow: 0 0 4px #ffcc00;
+}
+
+/* ---------- Invalid Field ---------- */
+.is-invalid {
+  border-color: #ff4444 !important;
+}
+
+.invalid-feedback {
+  color: #ff6666;
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+/* ---------- Button ---------- */
+.btn-primary {
+  background-color: #ffcc00 !important;
+  border: none;
+  color: #111;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 10px 30px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #ffdb4d !important;
+  transform: translateY(-2px);
+}
+
+/* ---------- Success Message ---------- */
+.alert-success {
+  background-color: rgba(0, 255, 127, 0.1);
+  color: #00ff7f;
+  border: 1px solid #00ff7f;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 10px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  h4[style] {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-header h4 {
+    font-size: 1.1rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input.form-control {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+  }
+}

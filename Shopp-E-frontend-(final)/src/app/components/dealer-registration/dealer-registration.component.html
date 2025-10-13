@@ -1,0 +1,154 @@
+<!--
+Types of Angular Forms
+There are two types of form building supported by Angular Forms. 
+
+Template-Driven Approach 
+Reactive Approach 
+
+*****Reactive Form Approach***** 
+
+This approach is the programming paradigm oriented around data flows and propagation of change. 
+With Reactive forms, the component directly manages the data flows between the form controls and the data models. 
+Reactive forms are code-driven, unlike the template-driven approach. 
+Reactive forms break from the traditional declarative approach. 
+Reactive forms eliminate the anti-pattern of updating the data model via two-way data binding.
+Typically, Reactive form control creation is synchronous and can be unit tested with synchronous programming techniques. 
+-->
+
+<div class="container mt-5 ">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>User Registration</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="dealerForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Address -->
+                                <h4 style="color: red;">Personal Details</h4>
+                                <!-- First Name -->
+                                <div class="form-group">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" id="fname" class="form-control" formControlName="fname"
+                                        [ngClass]="{'is-invalid': submitted && f['fname'].errors}" />
+                                    <div *ngIf="submitted && f['fname'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['fname'].errors['required']">First name is required</div>
+                                    </div>
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" id="lname" class="form-control" formControlName="lname"
+                                        [ngClass]="{'is-invalid': submitted && f['lname'].errors}" />
+                                    <div *ngIf="submitted && f['lname'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['lname'].errors['required']">Last name is required</div>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" formControlName="email"
+                                        [ngClass]="{'is-invalid': submitted && f['email'].errors}" />
+                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                        <div *ngIf="f['email'].errors['email']">Invalid email format</div>
+                                    </div>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" class="form-control" formControlName="password"
+                                        [ngClass]="{'is-invalid': submitted && f['password'].errors}" />
+                                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['password'].errors['required']">Password is required</div>
+                                        <div *ngIf="f['password'].errors['minlength']">
+                                            Password must be at least 6 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="form-group">
+                                    <label for="phoneNo">Phone Number</label>
+                                    <input type="text" id="phoneNo" class="form-control" formControlName="phoneNo"
+                                        [ngClass]="{'is-invalid': submitted && f['phoneNo'].errors}" />
+                                    <div *ngIf="submitted && f['phoneNo'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['phoneNo'].errors['required']">Phone number is required</div>
+                                    </div>
+                                </div>
+
+                                <!-- Date of Birth -->
+                                <div class="form-group">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" id="dob" class="form-control" formControlName="dob"
+                                        [ngClass]="{'is-invalid': submitted && f['dob'].errors}" />
+                                    <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['dob'].errors['required']">Date of birth is required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- Address -->
+                                <h4 style="color: red;">Address</h4>
+                                <div formGroupName="address">
+                                    <!-- Street -->
+                                    <div class="form-group">
+                                        <label for="street">Street</label>
+                                        <input type="text" id="street" class="form-control" formControlName="street"
+                                            [ngClass]="{'is-invalid': submitted && addressControls['street'].errors}" />
+                                        <div *ngIf="submitted && addressControls['street'].errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="addressControls['street'].errors['required']">Street is required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- City -->
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" class="form-control" formControlName="city"
+                                            [ngClass]="{'is-invalid': submitted && addressControls['city'].errors}" />
+                                        <div *ngIf="submitted && addressControls['city'].errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="addressControls['city'].errors['required']">City is required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pincode -->
+                                    <div class="form-group">
+                                        <label for="pincode">Pincode</label>
+                                        <input type="text" id="pincode" class="form-control" formControlName="pincode"
+                                            [ngClass]="{'is-invalid': submitted && addressControls['pincode'].errors}" />
+                                        <div *ngIf="submitted && addressControls['pincode'].errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="addressControls['pincode'].errors['required']">Pincode is
+                                                required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary mt-3">Register</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div *ngIf="successMessage" class="alert alert-success mt-3">
+                        {{ successMessage }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

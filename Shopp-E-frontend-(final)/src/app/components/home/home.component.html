@@ -1,0 +1,20 @@
+<!-- Control Strip -->
+<app-control-strip
+        [isUserLoggedIn]="isUserLoggedIn"
+        (sortChanged)="handleSort($event)"
+        (searchTriggered)="handleSearch($event)"
+        (cartClicked)="goToCart()">
+</app-control-strip>
+
+<!-- Product Cards -->
+<section class="product-grid">
+    <div class="product-card" *ngFor="let product of products">
+        <img [src]="product.imageUrl" alt="{{product.name}}" class="product-image" />
+        <div class="product-info">
+            <h3>{{product.name}}</h3>
+            <p class="price">₹ {{product.price}}</p>
+            <p class="description">{{product.description}}</p>
+            <button class="btn-cart-card btn-success btn" (click)="addToCart(product, 1)">Add to Cart</button>
+        </div>
+    </div>
+</section>

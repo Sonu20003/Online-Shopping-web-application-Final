@@ -1,0 +1,29 @@
+<div class="product-search-container  vh-100 vw-100">
+    <h2 style="color: green;">Product Search</h2>
+    <div class="search-bar">
+        <input type="text" placeholder="Enter product name" [(ngModel)]="searchTerm" class="form-control" />
+        <button (click)="handleSearch()" class="btn btn-primary mt-2">Search</button>
+    </div>
+    <p *ngIf="message" class="text-danger">{{ message }}</p>
+
+    <table *ngIf="products.length > 0" class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Made In</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.pid }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.madein }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

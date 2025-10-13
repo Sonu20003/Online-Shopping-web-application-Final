@@ -1,0 +1,28 @@
+<nav class="navbar">
+    <ul class="nav-list">
+        <ng-container>
+            <li class="nav-item">
+                <a *ngIf="isUserLoggedIn" routerLink="/home">Home</a>
+            </li>
+        
+            <li class="nav-item">
+                <a *ngIf="isUserLoggedIn" routerLink="/logout" (click)="handleLogout()">Logout</a>
+            </li>
+            <span class="user-style" *ngIf="isUserLoggedIn">
+                Welcome : {{username}}
+                <img class="avatar" src="\images\login-avatar.jpg" alt="Avatar" />
+            </span>
+            
+            <li class="nav-item">
+                <a *ngIf="!isUserLoggedIn" routerLink="/register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="!isUserLoggedIn" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="!isUserLoggedIn" routerLink="/aboutus">About Us</a>
+            </li>
+        </ng-container>
+
+    </ul>
+</nav>

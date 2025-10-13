@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+}
+
+body {
+  background-color: #121212;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #1f1f1f;
+  border-bottom: 1px solid #333;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #333;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+
+.hero {
+  /* background-image: url('/images/img2.jpg');
+  background-size: cover;
+  background-position: center; */
+  padding: 4rem 2rem;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75); /* stronger overlay for dark theme */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  border: 1px solid #333;
+}
+
+footer.footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+/* Optional: links/buttons inside dark content */
+a, button {
+  color: #ff9800; /* bright accent color for CTA */
+  text-decoration: none;
+}
+
+a:hover, button:hover {
+  color: #ffc107;
+}
+/* Logo image hover effect */
+.app-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-logo:hover {
+  transform: scale(1.15); /* slightly bigger */
+  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.6); /* subtle yellow glow */
+}
+
+/* Header text hover effect */
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+  cursor: default; /* optional */
+}
+
+.app-header h1:hover {
+  text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b; /* glowing yellow */
+  color: #fff; /* keeps the text visible */
+}
