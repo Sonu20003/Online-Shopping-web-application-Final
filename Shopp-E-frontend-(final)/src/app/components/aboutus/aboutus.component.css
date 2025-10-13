@@ -106,7 +106,7 @@
   gap: 25px;
 }
 
-.member-card {
+.member-card, .leader-card {
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 10px;
@@ -129,16 +129,27 @@
   border: 2px solid #ffcc00;
   margin-bottom: 10px;
 }
+.leader-card img {
+  border: 2px solid #f44462;
+  box-shadow: 1px 1px 5px #f44462;
+}
 
 .member-card h3 {
   color: #ffcc00;
   margin-bottom: 5px;
 }
 
-.member-card p {
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(255, 0, 94, 0.3);
+}
+
+.member-card p, .leader-card p {
   color: #bbb;
   font-size: 0.9rem;
 }
+
+
 
 /* Footer/Credits */
 .credits {
@@ -149,3 +160,4 @@
   border-top: 1px solid #333;
   padding-top: 20px;
 }
+
