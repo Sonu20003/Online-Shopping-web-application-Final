@@ -22,4 +22,12 @@ public class Product {
     private Double price;
     private String description;
     private String imageUrl;
+	public void setId(long l) {
+		this.id = l;
+		
+	}
+	public void setName(String string) {
+		this.name = string;
+		
+	}
 }

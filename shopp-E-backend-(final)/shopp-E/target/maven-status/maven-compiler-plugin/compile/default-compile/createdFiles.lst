@@ -1,0 +1,12 @@
+com\coforge\project\shoppe\repository\CartItemRepository.class
+com\coforge\project\shoppe\controller\ProductController.class
+com\coforge\project\shoppe\model\Address.class
+com\coforge\project\shoppe\model\User.class
+com\coforge\project\shoppe\repository\UserRepository.class
+com\coforge\project\shoppe\model\CartItem.class
+com\coforge\project\shoppe\controller\CartController.class
+com\coforge\project\shoppe\model\Product.class
+com\coforge\project\shoppe\repository\ProductRepository.class
+com\coforge\project\shoppe\controller\UserController.class
+com\coforge\project\shoppe\service\CartService.class
+com\coforge\project\shoppe\ShoppEApplication.class

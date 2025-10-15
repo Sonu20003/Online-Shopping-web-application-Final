@@ -84,4 +84,9 @@ public class User {
             address.setUser(this); // maintain bidirectional relationship
         }
     }
+
+	public void setEmail(String string) {
+		this.email = string;
+		
+	}
 }

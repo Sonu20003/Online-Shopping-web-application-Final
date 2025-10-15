@@ -1,0 +1,4 @@
+com\coforge\project\shoppe\controller\UserControllerTest.class
+com\coforge\project\shoppe\ShoppEApplicationTests.class
+com\coforge\project\shoppe\controller\CartControllerTest.class
+com\coforge\project\shoppe\controller\ProductControllerTest.class
